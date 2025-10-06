@@ -24,6 +24,19 @@ public class GlobalExceptionHandler {
         return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(response);
     }
 
+    @ExceptionHandler(CustomException.class)
+    public ResponseEntity<ApiResponse<Void>> handleCustomException(CustomException e) {
+        log.warn("CustomException: {}", e.getMessage());
+
+        ApiResponse<Void> response = new ApiResponse<>(
+            e.getMessage(),
+            null,
+            e.getErrorCode()
+        );
+
+        return ResponseEntity.status(e.getStatus()).body(response);
+    }
+
     @ExceptionHandler(Exception.class)
     public ResponseEntity<ApiResponse<Void>> handleException(Exception e) {
         log.error("Unexpected exception occurred", e);

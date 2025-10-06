@@ -1,6 +1,7 @@
 package io.yogurt.cli_mini_game.user;
 
 import io.yogurt.cli_mini_game.common.api.ApiResponse;
+import io.yogurt.cli_mini_game.common.user.dto.LoginRequest;
 import io.yogurt.cli_mini_game.common.user.dto.StoreUserRequest;
 import io.yogurt.cli_mini_game.common.user.dto.UserInfoResponse;
 import lombok.RequiredArgsConstructor;
@@ -20,6 +21,15 @@ public class UserController {
     public ApiResponse<UserInfoResponse> store(@RequestBody StoreUserRequest request) {
 
         UserInfoResponse savedUser = userService.store(request);
+
+        return ApiResponse.ok(savedUser);
+    }
+
+
+    @PostMapping("/login")
+    public ApiResponse<UserInfoResponse> login(@RequestBody LoginRequest request) {
+
+        UserInfoResponse savedUser = userService.login(request);
 
         return ApiResponse.ok(savedUser);
     }
