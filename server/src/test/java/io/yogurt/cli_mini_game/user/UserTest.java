@@ -9,6 +9,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import io.yogurt.cli_mini_game.common.user.dto.LoginRequest;
 import io.yogurt.cli_mini_game.common.user.dto.StoreUserRequest;
 import io.yogurt.cli_mini_game.user.entity.User;
+import io.yogurt.cli_mini_game.user.repository.UserRepository;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;

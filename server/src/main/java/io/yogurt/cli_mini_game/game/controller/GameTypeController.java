@@ -1,7 +1,8 @@
-package io.yogurt.cli_mini_game.game;
+package io.yogurt.cli_mini_game.game.controller;
 
 import io.yogurt.cli_mini_game.common.api.ApiResponse;
 import io.yogurt.cli_mini_game.common.game.dto.GameTypeListResponse;
+import io.yogurt.cli_mini_game.game.service.GameTypeService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.ResponseEntity;

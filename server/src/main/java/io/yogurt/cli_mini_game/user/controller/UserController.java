@@ -1,9 +1,10 @@
-package io.yogurt.cli_mini_game.user;
+package io.yogurt.cli_mini_game.user.controller;
 
 import io.yogurt.cli_mini_game.common.api.ApiResponse;
 import io.yogurt.cli_mini_game.common.user.dto.LoginRequest;
 import io.yogurt.cli_mini_game.common.user.dto.StoreUserRequest;
 import io.yogurt.cli_mini_game.common.user.dto.UserInfoResponse;
+import io.yogurt.cli_mini_game.user.service.UserService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;

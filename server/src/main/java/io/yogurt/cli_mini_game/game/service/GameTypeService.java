@@ -1,8 +1,9 @@
-package io.yogurt.cli_mini_game.game;
+package io.yogurt.cli_mini_game.game.service;
 
 import io.yogurt.cli_mini_game.common.game.dto.GameTypeDTO;
 import io.yogurt.cli_mini_game.common.game.dto.GameTypeListResponse;
 import io.yogurt.cli_mini_game.game.entity.GameType;
+import io.yogurt.cli_mini_game.game.repository.GameTypeRepository;
 import java.util.List;
 import java.util.stream.Collectors;
 import lombok.RequiredArgsConstructor;
