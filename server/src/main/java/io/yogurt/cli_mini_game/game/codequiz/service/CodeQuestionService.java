@@ -60,6 +60,14 @@ public class CodeQuestionService {
     }
 
     /**
+     * ID로 특정 문제 조회
+     */
+    public CodeQuestion getQuestionById(Long questionId) {
+        return codeQuestionRepository.findById(questionId)
+            .orElseThrow(() -> new IllegalStateException("Question not found: " + questionId));
+    }
+
+    /**
      * 전체 문제 개수 조회
      */
     public long getTotalQuestionCount() {
