@@ -1,4 +1,4 @@
-package io.yogurt.cli_mini_game.user;
+package io.yogurt.cli_mini_game.user.service;
 
 import static java.util.Objects.isNull;
 
@@ -7,6 +7,7 @@ import io.yogurt.cli_mini_game.common.user.dto.StoreUserRequest;
 import io.yogurt.cli_mini_game.common.user.dto.UserInfoResponse;
 import io.yogurt.cli_mini_game.exception.BadRequestException;
 import io.yogurt.cli_mini_game.user.entity.User;
+import io.yogurt.cli_mini_game.user.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.security.crypto.password.PasswordEncoder;

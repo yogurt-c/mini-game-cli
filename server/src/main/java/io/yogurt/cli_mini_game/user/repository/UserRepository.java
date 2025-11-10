@@ -1,4 +1,4 @@
-package io.yogurt.cli_mini_game.user;
+package io.yogurt.cli_mini_game.user.repository;
 
 import io.yogurt.cli_mini_game.user.entity.User;
 import org.springframework.data.jpa.repository.JpaRepository;
