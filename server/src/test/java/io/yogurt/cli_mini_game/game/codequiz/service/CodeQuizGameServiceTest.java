@@ -99,9 +99,11 @@ class CodeQuizGameServiceTest {
     void submitAnswer_Correct_WithObstacles() {
         // given
         room.startGame();
+        room.setCurrentQuestion(1L);
         player1.addObstacle();
         player1.addObstacle();
 
+        when(questionService.getQuestionById(1L)).thenReturn(sampleQuestion);
         when(questionService.getRandomQuestionByLanguage(Language.JAVA)).thenReturn(sampleQuestion);
         when(questionService.checkAnswer(any(), any())).thenReturn(true);
 
@@ -121,7 +123,9 @@ class CodeQuizGameServiceTest {
     void submitAnswer_Correct_WithoutObstacles() {
         // given
         room.startGame();
+        room.setCurrentQuestion(1L);
 
+        when(questionService.getQuestionById(1L)).thenReturn(sampleQuestion);
         when(questionService.getRandomQuestionByLanguage(Language.JAVA)).thenReturn(sampleQuestion);
         when(questionService.checkAnswer(any(), any())).thenReturn(true);
 
@@ -142,8 +146,9 @@ class CodeQuizGameServiceTest {
     void submitAnswer_Wrong() {
         // given
         room.startGame();
+        room.setCurrentQuestion(1L);
 
-        when(questionService.getRandomQuestionByLanguage(Language.JAVA)).thenReturn(sampleQuestion);
+        when(questionService.getQuestionById(1L)).thenReturn(sampleQuestion);
         when(questionService.checkAnswer(any(), any())).thenReturn(false);
 
         // when
@@ -163,6 +168,7 @@ class CodeQuizGameServiceTest {
     void submitAnswer_OpponentDefeated() {
         // given
         room.startGame();
+        room.setCurrentQuestion(1L);
 
         // 상대 플레이어에게 이미 4개의 장애물이 있음
         player2.addObstacle();
@@ -170,7 +176,7 @@ class CodeQuizGameServiceTest {
         player2.addObstacle();
         player2.addObstacle();
 
-        when(questionService.getRandomQuestionByLanguage(Language.JAVA)).thenReturn(sampleQuestion);
+        when(questionService.getQuestionById(1L)).thenReturn(sampleQuestion);
         when(questionService.checkAnswer(any(), any())).thenReturn(true);
 
         // when

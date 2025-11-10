@@ -88,7 +88,7 @@ public class CodeQuizGameService {
         }
 
         // 현재 문제 가져오기
-        CodeQuestion question = questionService.getRandomQuestionByLanguage(room.getLanguage());  // TODO: 실제로는 currentQuestionId로 조회
+        CodeQuestion question = questionService.getQuestionById(room.getCurrentQuestionId());
 
         // 정답 검증
         boolean isCorrect = questionService.checkAnswer(question, answer);
