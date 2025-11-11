@@ -1,0 +1,16 @@
+2025-11-10 14:37:37.581770+09:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "INSERT INTO code_questions (code, incorrect_lines, explanation, language) VALUES ( 'public class StringUtils {\000a    public static int getLength(String str) {\000a        if (str == null) {\000a            return null;\000a        }\000a        return str.length(,\000a'[*]JAVA'\000a);\000a    }\000a\000a    public static boolean isEmpty(String str) {\000a        return str == null || str.isEmpty();\000a    }\000a}', '4', '4번 라인: return 타입이 int인데 null을 반환할 수 없습니다. return 0 또는 예외를 던져야 합니다.' )"; expected "[, ., ::, AT, FORMAT, *, /, %, +, -, ||, NOT, IS, ILIKE, REGEXP, AND, OR, ,, )"; SQL statement:
+INSERT INTO code_questions (code, incorrect_lines, explanation, language) VALUES ( 'public class StringUtils {
+    public static int getLength(String str) {
+        if (str == null) {
+            return null;
+        }
+        return str.length(,
+'JAVA'
+);
+    }
+
+    public static boolean isEmpty(String str) {
+        return str == null || str.isEmpty();
+    }
+}', '4', '4번 라인: return 타입이 int인데 null을 반환할 수 없습니다. return 0 또는 예외를 던져야 합니다.' ) [42001-232]

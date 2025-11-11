@@ -3,6 +3,8 @@ package io.yogurt.cli_mini_game.game.codequiz.entity;
 import io.yogurt.cli_mini_game.common.game.dto.codequiz.Language;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.EnumType;
+import jakarta.persistence.Enumerated;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
@@ -32,6 +34,7 @@ public class CodeQuestion {
     @Column(columnDefinition = "TEXT")
     private String explanation;
 
+    @Enumerated(EnumType.STRING)
     @Column(nullable = false, length = 20)
     private Language language;  // "JAVA", "PYTHON"
 

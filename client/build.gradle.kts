@@ -21,6 +21,7 @@ dependencies {
 	implementation(project(":common"))
 	implementation("org.java-websocket:Java-WebSocket:1.5.3")
 	implementation("com.fasterxml.jackson.core:jackson-databind:2.15.2")
+	implementation("com.googlecode.lanterna:lanterna:3.1.1")
 }
 
 application {

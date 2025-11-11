@@ -9,7 +9,7 @@ spring:
     username: sa
     password:
 
-  # H2 Console (??? ? ?????)
+  # H2 Console
   h2:
     console:
       enabled: true
@@ -24,6 +24,7 @@ spring:
       hibernate:
         format_sql: true
         use_sql_comments: true
+    defer-datasource-initialization: true
 
   # SQL 초기화 설정
   sql:

@@ -19,6 +19,10 @@ public record GameOverMessage(
         this("GAME_OVER", reason, winner, playerStats);
     }
 
+    /**
+     * 플레이어 최종 통계
+     * 참고: nickname은 Map의 key와 중복되지만, 데이터 일관성을 위해 유지
+     */
     public record PlayerStats(
         String nickname,
         int finalScore,
